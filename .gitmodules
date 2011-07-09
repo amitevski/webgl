@@ -1,0 +1,6 @@
+[submodule "lib/philogl"]
+	path = lib/philogl
+	url = git://github.com/senchalabs/philogl.git
+[submodule "lib/jquery"]
+	path = lib/jquery
+	url = git://github.com/jquery/jquery.git
