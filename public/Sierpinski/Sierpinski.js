@@ -274,7 +274,7 @@ function webGLStart() {
         	changeRecursionLevel();
         }
         //Draw sierpinskiTetraedon
-        sierpinskiTetraedon.position.set(0, 0, -35);
+        sierpinskiTetraedon.position.set(0, 0, -30);
         sierpinskiTetraedon.rotation.set(xRot, yRot, 0);
         setupElement(sierpinskiTetraedon);
         gl.drawArrays(gl.TRIANGLES, 0, triangleCount);
