@@ -23,7 +23,7 @@ function webGLStart() {
 	var xRot = 0,
 		yRot = 0;
 	var PI = Math.PI;
-	var cone, ground, currentVec3,
+	var currentVec3,
 		startingY = 0,
 		triangleCount = 0,
 		sideLength = 4,
