@@ -1,0 +1,16 @@
+#webglCanvas {
+	float: left;
+	padding: 15px;
+}
+#controls {
+	float: left;
+	padding: 15px;
+}
+#slider {
+	float: left;
+}
+
+#controls label {
+	float: left;
+	padding: 5px 10px;
+}

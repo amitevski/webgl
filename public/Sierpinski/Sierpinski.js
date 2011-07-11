@@ -1,4 +1,22 @@
 function webGLStart() {
+	//UI stuff
+	var recursionLevel = 2;
+	var self = this;
+	$( "#slider" ).slider({
+		orientation: "vertical",
+		range: "min",
+		min: 0,
+		max: 6,
+		value: recursionLevel,
+		slide: function( event, ui ) {
+			
+			recursionLevel = ui.value;
+			$( "#recursionLevel" ).val( recursionLevel );
+			
+		}
+	});
+	$( "#recursionLevel" ).val( recursionLevel );
+	
 	//hacky implementation of sierpinski tetraedon
 	//@todo make calculation of tetraedon in worker
 	//and solve recursion stack exception if recursionLevel>6
@@ -8,7 +26,6 @@ function webGLStart() {
 	var cone, ground, currentVec3,
 		startingY = 0,
 		triangleCount = 0,
-		recursionLevel = 6,
 		sideLength = 4,
 		defaultSideLength = 6,
 		lastRecursionLevel = -1;
@@ -18,12 +35,8 @@ function webGLStart() {
 	//Load models arrays
 	var triangles = [];
 	var sierpinskiVertices = [];
-	var coneVertices = [];
-	var coneColors = [];
-	var groundVertices = [];
-	var groundColors = [];
 
-  PhiloGL('culling-canvas', {
+  PhiloGL('sierpinski-canvas', {
     program: {
       from: 'ids',
       vs: 'shader-vs',
@@ -256,7 +269,10 @@ function webGLStart() {
 
       function drawScene() {
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-        
+        //check if recursionLevel changed
+        if (lastRecursionLevel != recursionLevel) {
+        	changeRecursionLevel();
+        }
         //Draw sierpinskiTetraedon
         sierpinskiTetraedon.position.set(0, 0, -35);
         sierpinskiTetraedon.rotation.set(xRot, yRot, 0);

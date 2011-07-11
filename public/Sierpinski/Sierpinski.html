@@ -6,7 +6,11 @@
  
 <script type="text/javascript" src="../../lib/philogl/build/PhiloGL.js"></script>
 <script type="text/javascript" src="../../lib/demos/matrixStack.js"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<link rel="stylesheet" href="Sierpinski.css" type="text/css" media="all" /> 
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/base/jquery-ui.css" type="text/css" media="all" /> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script> 
  
 <script id="shader-fs" type="x-shader/x-fragment"> 
   #ifdef GL_ES
@@ -36,8 +40,23 @@
 </script> 
 </head> 
  
-<body onload="webGLStart();"> 
-  <canvas id="culling-canvas" style="border: none;" width="800" height="600"></canvas> 
-  <script src="Sierpinski.js"> </script> 
+<body>
+<div> 
+	<div id="webglCanvas">
+	  <canvas id="sierpinski-canvas" style="border: none;" width="800" height="600"></canvas> 
+	</div> 
+	<div id="controls">
+		<div id="slider"></div>
+		<label for="recursionLevel">Recursion Level</label>
+		<input type="text" id="recursionLevel" />
+		</div>
+	</div>
+</div>
+  <script src="Sierpinski.js"> </script>
+  <script>
+     $(document).ready(function(){
+       	webGLStart();
+     });
+   </script>
 </body> 
 </html> 
