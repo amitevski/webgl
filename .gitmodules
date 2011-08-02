@@ -4,3 +4,6 @@
 [submodule "lib/jquery"]
 	path = lib/jquery
 	url = git://github.com/jquery/jquery.git
+[submodule "lib/three"]
+	path = lib/three
+	url = git://github.com/mrdoob/three.js.git

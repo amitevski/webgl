@@ -82,7 +82,7 @@ function webGLStart() {
           view = new PhiloGL.Mat4;
 
       gl.viewport(0, 0, canvas.width, canvas.height);
-      gl.clearColor(0, 0, 0, 1);
+      gl.clearColor(0, 1, 1, 1);
       gl.clearDepth(1);
       gl.enable(gl.DEPTH_TEST);
       gl.enable(gl.GL_CULL_FACE);
